@@ -1,33 +1,26 @@
-import { BrowserRouter, Route, RouterContext } from "./router/index.jsx";
-function Home() {
-  return <h1>Home</h1>;
-}
+import { Route, Routes } from "react-router-dom";
+import Home from "./page/Home.tsx";
+import About from "./page/About.tsx";
+import Warp from "./page/Warp.tsx";
+import WarpOne from "./page/WarpPage/WarpOne.tsx";
+import Teams from "./page/WarpPage/Teams.tsx";
+import TeamsId from "./page/WarpPage/TeamsId.tsx";
+import TeamsSetting from "./page/WarpPage/TeamsSetting.tsx";
 
-function About() {
-  return <h1>About</h1>;
-}
-
-function TestPage() {
-  return <h1>TestPage</h1>;
-}
 function App() {
-
   return (
-    <BrowserRouter>
-      <RouterContext.Consumer>
-        {(router) => (
-          <>
-            <button onClick={() => router.goPath("/")}>Home</button>
-            <button onClick={() => router.goPath("/about")}>About</button>
-            <button onClick={() => router.goPath("/testPage")}>testPage</button>
-            <Route path="/" component={Home} />
-            <Route path="/about" component={About} />
-            <Route path="/testPage" component={TestPage} />
-          </>
-        )}
-      </RouterContext.Consumer>
-    </BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Warp />}>
+        <Route index element={<WarpOne />} />
+        <Route path="teams" element={<Teams />} >
+          <Route path=":teamId" element={<TeamsId />}></Route>
+          <Route index element={<TeamsSetting />}></Route>
+        </Route>
+      </Route>
+      <Route path="/" element={<Home />}></Route>
+      <Route path="/about" element={<About />}></Route>
+    </Routes>
   );
 }
 
-export default App
+export default App;
