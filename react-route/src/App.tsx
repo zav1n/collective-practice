@@ -5,6 +5,7 @@ import Warp from "./page/Warp.tsx";
 import WarpOne from "./page/WarpPage/WarpOne.tsx";
 import Teams from "./page/WarpPage/Teams.tsx";
 import TeamsId from "./page/WarpPage/TeamsId.tsx";
+import TeamsIdEdit from "./page/WarpPage/TeamsIdEdit.tsx";
 import TeamsSetting from "./page/WarpPage/TeamsSetting.tsx";
 
 function App() {
@@ -12,8 +13,9 @@ function App() {
     <Routes>
       <Route path="/" element={<Warp />}>
         <Route index element={<WarpOne />} />
-        <Route path="teams" element={<Teams />} >
+        <Route path="teams" element={<Teams />}>
           <Route path=":teamId" element={<TeamsId />}></Route>
+          <Route path=":teamId/edit" element={<TeamsIdEdit />}></Route>
           <Route index element={<TeamsSetting />}></Route>
         </Route>
       </Route>
