@@ -22,13 +22,20 @@ const TeamsId: React.FC = () => {
       name: 'zzz',
       age: '22'
     });
-    // navigate('/', {
-    //   state: {
-    //     id: 'ddd'
-    //   }
-    // })
   }
-  return <h1 onClick={handleClick}>Teams Id</h1>;
+
+  const handleNavigate = () => {
+    navigate('/', {
+      state: {
+        id: 'APT'
+      }
+    })
+  }
+  return <>
+    <h1 onClick={handleClick}>set uarl params</h1>
+    <h1 onClick={handleNavigate}>navigate to /</h1>
+  </>
+  
 };
 
 export default TeamsId;
