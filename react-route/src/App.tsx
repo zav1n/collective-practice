@@ -7,6 +7,8 @@ import Teams from "./page/WarpPage/Teams.tsx";
 import TeamsId from "./page/WarpPage/TeamsId.tsx";
 import TeamsIdEdit from "./page/WarpPage/TeamsIdEdit.tsx";
 import TeamsSetting from "./page/WarpPage/TeamsSetting.tsx";
+import PageLayout from "./page/PageLayout/index.tsx";
+import LayoutContain from "./page/PageLayout/LayoutContain.tsx";
 
 function App() {
   return (
@@ -20,6 +22,10 @@ function App() {
         </Route>
       </Route>
       <Route path="/" element={<Home />}></Route>
+
+      <Route element={<PageLayout />}>
+        <Route path="/layoutContain" element={<LayoutContain />}></Route>
+      </Route>
       <Route path="/about" element={<About />}></Route>
     </Routes>
   );
