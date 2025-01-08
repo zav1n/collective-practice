@@ -8,18 +8,25 @@ import {
 
 const TeamsId: React.FC = () => {
   const urlParams = useParams()
+  
+  console.log("urlParams", urlParams);
   const location = useLocation()
+  console.log("location", location);
   const [urlSearchParams, setUrlParams] = useSearchParams()
   const navigate = useNavigate()
 
   console.log("urlSearchParams", urlSearchParams.get('name'));
 
   const handleClick = () => {
-    navigate('/', {
-      state: {
-        id: 'ddd'
-      }
-    })
+    setUrlParams({
+      name: 'zzz',
+      age: '22'
+    });
+    // navigate('/', {
+    //   state: {
+    //     id: 'ddd'
+    //   }
+    // })
   }
   return <h1 onClick={handleClick}>Teams Id</h1>;
 };
