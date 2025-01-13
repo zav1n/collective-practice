@@ -32,7 +32,7 @@ function App() {
       <div className="nav">
         <Link to="/home">Home</Link>
         <Link to="/">首页</Link>
-        <Link to="/layoutContain">首页</Link>
+        <Link to="/layoutContain">LayoutContain</Link>
         <Link to="/about">关于</Link>
         <Link to="/teams/321?name=ddd&&age=22">teams</Link>
         <Link to="/counter">counter</Link>
