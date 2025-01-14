@@ -1,11 +1,11 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux"
 import { increment, decrement, dynamicsPlus } from "../../store/counter.ts"
-import type { RootState } from "../../store/index.ts"
+import type { RootState, AppDispatch } from "../../store/index.ts"
 
 const Counter: React.FC = () => {
   const counter = useSelector((state: RootState) => state.counter.count)
-  const dispatch = useDispatch()
+  const dispatch = useDispatch<AppDispatch>()
   
   return (<>
     <div>counter: {counter}</div>
