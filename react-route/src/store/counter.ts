@@ -1,5 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
-
+type Action = {
+  payload: number
+}
 
 const counterSlice = createSlice({
   name: 'counter',
@@ -12,12 +14,15 @@ const counterSlice = createSlice({
     },
     decrement: (state) => {
       state.count -= 1
+    },
+    dynamicsPlus: (state, action: Action) => {
+      state.count += action.payload || 0
     }
   }
 })
 
 // 导出 actions
-export const { increment, decrement } = counterSlice.actions;
+export const { increment, decrement, dynamicsPlus } = counterSlice.actions;
 
 // 导出 reducer
 export default counterSlice.reducer;
