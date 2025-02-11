@@ -14,7 +14,8 @@
 
 import { Middleware } from 'redux';
 
-export const errorHandleMiddleware: Middleware = store => next => action => {
+export const errorHandleMiddleware: Middleware = store => 
+  next => action => {
   try {
     return next(action)
   } catch (error) {
